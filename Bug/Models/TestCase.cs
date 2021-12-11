@@ -4,15 +4,36 @@ using Bug.Models;
 
 namespace Bug
 {
-    public class TestCase
+    public class TestCase : Issue
     {
-        public Guid Id { get; set; }
-        public DateTime CreationDate { get; set; }
-        public Priority Priority { get; set; }
-        public string Summary { get; set; }
-        public string Precondition { get; set; }
-        public Status Status { get; set; }
+
         public List<Step> Steps { get; set; }
+
+        public override IIssue Get()
+        {
+            return this;
+        }
+
+        public override void Set(IIssue issue)
+        {
+
+            var testCase = issue as TestCase;
+            if (testCase != null)
+            {
+                Id = testCase.Id;
+                CreationDate = testCase.CreationDate;
+                Priority = testCase.Priority;
+                Summary = testCase.Summary;
+                Precondition = testCase.Precondition;
+                Steps = testCase.Steps;
+
+            }
+            else {
+                throw new InvalidCastException("Ошибка преобразования");
+            }
+         
+        }
+  
 
         public TestCase()
         {

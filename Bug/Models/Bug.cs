@@ -1,20 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
 using Bug.Models;
 
 namespace Bug
 {
-    public class Bug
+    public class Bug : Issue
     {
-        public Guid Id { get; set; }
-        public DateTime CreationDate { get; set; }
-        public Priority Priority { get; set; }
-        public string Summary { get; set; }
-        public string Precondition { get; set; }
-        public Status Status { get; set; }
         public int TestCaseId { get; set; }
         public int StepNumber { get; set; }
         public string ActualResult { get; set; }
         public string ExpectedResult { get; set; }
+
+        public override IIssue Get()
+        {
+            return this;
+        }
+
+        public override void Set(IIssue issue)
+        {
+            var bug = issue as Bug;
+            if (bug != null)
+            {
+                Id = bug.Id;
+                CreationDate = bug.CreationDate;
+                Priority = bug.Priority;
+                Summary = bug.Summary;
+                Precondition = bug.Precondition;
+                Status = bug.Status;
+                TestCaseId = bug.TestCaseId;
+                StepNumber = bug.StepNumber;
+                ActualResult = bug.ActualResult;
+                ExpectedResult = bug.ExpectedResult;
+            } else
+            {
+                throw new InvalidCastException("Ошибка преобразования");
+            }
+
+        }
 
         public Bug()
         {

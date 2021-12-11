@@ -10,7 +10,7 @@ namespace Bug
         {
             var bugs = new List<Bug>();
             var testCases = new List<TestCase>();
-            
+
             while (true)
             {
                 Console.WriteLine("If you want work with bug press B and if you want to work with TestCase press T");
@@ -63,10 +63,10 @@ namespace Bug
             //priority for bug
 
             Priority priority;
-             while (true)
-              {
-             Console.WriteLine("Enter bug priority: l for low, m for medium, h for high");
-             string priorityStr = Console.ReadLine().ToUpper();
+            while (true)
+            {
+                Console.WriteLine("Enter bug priority: l for low, m for medium, h for high");
+                string priorityStr = Console.ReadLine().ToUpper();
                 if (priorityStr == "M" || priorityStr == "L" || priorityStr == "H")
                 {
                     priority = ProcessPriority(priorityStr);
@@ -91,7 +91,7 @@ namespace Bug
                 if (!isInputValid) continue;
                 summary = input;
                 validInputRecievedSummary = false;
-         
+
             } while (validInputRecievedSummary);
 
             //precondition for Bug
@@ -280,7 +280,7 @@ namespace Bug
 
             return step;
 
-    }
+        }
 
         private static Priority ProcessPriority(string priority)
         {
@@ -292,5 +292,7 @@ namespace Bug
                 _ => Priority.Medium
             };
         }
+
+        string[] menuList = {"Add", "Show"}; 
     }
 }
