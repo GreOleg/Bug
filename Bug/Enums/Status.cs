@@ -1,4 +1,4 @@
-﻿namespace Bug.Models
+﻿namespace Bug.Enums
 {
     public enum Status
     {

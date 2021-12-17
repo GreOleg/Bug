@@ -13,7 +13,7 @@ namespace Bug
             while (true)
             {
                 Console.Clear();
-                WriteMenuPoints(menuPoints);
+                ShowoOptions(menuPoints);
 
                 Console.WriteLine("Please choose action number");
                 var point = Console.ReadLine();
@@ -22,20 +22,33 @@ namespace Bug
 
                 if (!inputParsed || userPoint > menuPoints.Length)
                 {
-                    WriteMenuPoints(menuPoints);
+                    ShowoOptions(menuPoints);
                     continue;
                 }
 
-                return userPoint - 1;
+                return userPoint;
             }
         }
 
-        private static void WriteMenuPoints(string[] menuPoints)
+        public static int ChooseEnumOptions<T>()
+            where T : Enum
+        {
+            var str = new List<string>();
+            foreach (var option in Enum.GetValues(typeof(T)))
+            {
+                str.Add(option.ToString());
+            }
+
+            return Choose(str.ToArray());
+        }
+
+        private static void ShowoOptions(string[] menuPoints)
         {
             for (int i = 0; i < menuPoints.Length; i++)
             {
                 Console.WriteLine($"{i + 1} - {menuPoints[i]}");
             }
         }
+
     }
 }

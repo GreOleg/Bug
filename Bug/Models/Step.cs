@@ -4,14 +4,10 @@ namespace Bug
 {
     public class Step
     {
-        public Guid Number { get; set; }
+        public int Number { get; }
         public string Action { get; set; }
         public string Result { get; set; }
 
-        public Step()
-        {
-            Number = Guid.NewGuid();
-        }
 
         public override string ToString()
         {

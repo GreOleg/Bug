@@ -1,9 +1,10 @@
-﻿namespace Bug.Models
+﻿namespace Bug.Enums
 {
     public enum Priority
     {
         Low,
         Medium,
-        High
+        High,
+        Critical
     }
 }

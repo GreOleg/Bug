@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bug.Models;
+using Bug.Enums;
+using Bug.Application;
 
 namespace Bug
 {
@@ -13,48 +14,49 @@ namespace Bug
 
             while (true)
             {
-                Console.WriteLine("If you want work with bug press B and if you want to work with TestCase press T");
+                //Console.WriteLine("If you want work with bug press B and if you want to work with TestCase press T");
 
-                var actionKey = Console.ReadLine();
+                //var actionKey = Console.ReadLine();
 
 
-                switch (actionKey.ToUpper())
-                {
-                    case "B":
-                        Console.WriteLine("Press G to get bugs or A to add a new one");
-                        var actionBagKey = Console.ReadLine();
-                        if (actionBagKey.ToUpper() == "G")
-                        {
-                            bugs.ForEach(Console.WriteLine);
-                        }
-                        else if (actionBagKey.ToUpper() == "A")
-                        {
-                            var bug = InitBug();
-                            bugs.Add(bug);
-                        }
-                        else break;
+                //switch (actionKey.ToUpper())
+                //{
+                //    case "B":
+                //        Console.WriteLine("Press G to get bugs or A to add a new one");
+                //        var actionBagKey = Console.ReadLine();
+                //        if (actionBagKey.ToUpper() == "G")
+                //        {
+                //            bugs.ForEach(Console.WriteLine);
+                //        }
+                //        else if (actionBagKey.ToUpper() == "A")
+                //        {
+                //            var bug = InitBug();
+                //            bugs.Add(bug);
+                //        }
+                //        else break;
 
-                        break;
-                    case "T":
-                        Console.WriteLine("Press G to get Test Cases or A to add a new one");
-                        var actionTestCasesKey = Console.ReadLine();
-                        if (actionTestCasesKey.ToUpper() == "G")
-                        {
-                            testCases.ForEach(Console.WriteLine);
-                        }
-                        else if (actionTestCasesKey.ToUpper() == "A")
-                        {
-                            var testCase = InitTestCase();
-                            testCases.Add(testCase);
-                        }
-                        else break;
+                //        break;
+                //    case "T":
+                //        Console.WriteLine("Press G to get Test Cases or A to add a new one");
+                //        var actionTestCasesKey = Console.ReadLine();
+                //        if (actionTestCasesKey.ToUpper() == "G")
+                //        {
+                //            testCases.ForEach(Console.WriteLine);
+                //        }
+                //        else if (actionTestCasesKey.ToUpper() == "A")
+                //        {
+                //            var testCase = InitTestCase();
+                //            testCases.Add(testCase);
+                //        }
+                //        else break;
 
-                        break;
-                    default:
-                        Console.WriteLine("Incorrect input. Please follow the instructions above");
-                        break;
-                }
-
+                //        break;
+                //    default:
+                //        Console.WriteLine("Incorrect input. Please follow the instructions above");
+                //        break;
+                //}
+               var a = new App();
+                a.Run(); 
             }
         }
 

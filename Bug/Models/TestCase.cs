@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bug.Models;
+using Bug.Interfaces;
+
 
 namespace Bug
 {
@@ -37,9 +38,7 @@ namespace Bug
 
         public TestCase()
         {
-            Id = Guid.NewGuid();
-            CreationDate = DateTime.UtcNow;
-            Status = Status.New;
+            Steps = new List<Step>();
         }
 
         public override string ToString()

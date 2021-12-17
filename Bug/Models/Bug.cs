@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bug.Models;
+using Bug.Interfaces;
+using Bug.Enums;
 
 namespace Bug
 {
@@ -38,12 +39,12 @@ namespace Bug
 
         }
 
-        public Bug()
-        {
-            Id = Guid.NewGuid();
-            CreationDate = DateTime.UtcNow;
-            Status = Status.New;
-        }
+        //public Bug()
+        //{
+        //    Id = Guid.NewGuid();
+        //    CreationDate = DateTime.UtcNow;
+        //    Status = Status.New;
+        //}
 
         public override string ToString()
         {
