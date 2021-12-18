@@ -8,7 +8,6 @@ namespace Bug
         public string Action { get; set; }
         public string Result { get; set; }
 
-
         public override string ToString()
         {
             return $"Step Number = {Number}, \n " +

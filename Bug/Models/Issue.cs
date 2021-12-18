@@ -10,7 +10,7 @@ namespace Bug
 {
     public abstract class Issue : IIssue
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreationDate { get; set; }
         public Priority Priority { get; set; }
         public string Summary { get; set; }
@@ -29,10 +29,9 @@ namespace Bug
 
         public Issue()
         {
-            Id = long.MaxValue;
+            Id = Guid.NewGuid();
             CreationDate = DateTime.UtcNow;
             Status = Status.New;
         }
-
     }
 }

@@ -8,7 +8,7 @@ namespace Bug
     public class Bug : Issue
     {
         public int TestCaseId { get; set; }
-        public int StepNumber { get; set; }
+        public int? StepNumber { get; set; }
         public string ActualResult { get; set; }
         public string ExpectedResult { get; set; }
 
@@ -32,19 +32,13 @@ namespace Bug
                 StepNumber = bug.StepNumber;
                 ActualResult = bug.ActualResult;
                 ExpectedResult = bug.ExpectedResult;
-            } else
+            }
+            else
             {
                 throw new InvalidCastException("Ошибка преобразования");
             }
 
         }
-
-        //public Bug()
-        //{
-        //    Id = Guid.NewGuid();
-        //    CreationDate = DateTime.UtcNow;
-        //    Status = Status.New;
-        //}
 
         public override string ToString()
         {

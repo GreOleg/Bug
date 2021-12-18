@@ -7,7 +7,6 @@ namespace Bug
 {
     public class TestCase : Issue
     {
-
         public List<Step> Steps { get; set; }
 
         public override IIssue Get()
@@ -17,7 +16,6 @@ namespace Bug
 
         public override void Set(IIssue issue)
         {
-
             var testCase = issue as TestCase;
             if (testCase != null)
             {
@@ -31,11 +29,9 @@ namespace Bug
             }
             else {
                 throw new InvalidCastException("Ошибка преобразования");
-            }
-         
+            }        
         }
   
-
         public TestCase()
         {
             Steps = new List<Step>();

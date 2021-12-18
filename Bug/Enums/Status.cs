@@ -1,6 +1,6 @@
 ﻿namespace Bug.Enums
 {
-    public enum Status
+    public enum Status 
     {
         New,
         InProgress,

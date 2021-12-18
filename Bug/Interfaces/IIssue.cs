@@ -9,7 +9,7 @@ namespace Bug.Interfaces
 {
     public interface IIssue
     {
-        public long Id { get; }
+        public Guid Id { get; }
         public DateTime CreationDate { get; }
         public Priority Priority { get; set; }
         public string Summary { get; set; }

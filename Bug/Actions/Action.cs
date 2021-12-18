@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Bug
 {
-    public static class Actions
+    public static class Action
     {
         public static int Choose(params string[] menuPoints)
         {
             while (true)
             {
-                Console.Clear();
                 ShowoOptions(menuPoints);
 
                 Console.WriteLine("Please choose action number");
@@ -25,7 +24,6 @@ namespace Bug
                     ShowoOptions(menuPoints);
                     continue;
                 }
-
                 return userPoint;
             }
         }
