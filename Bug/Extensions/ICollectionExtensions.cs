@@ -81,6 +81,5 @@ namespace Bug
             var element = issues.Where(x => x.Id == id).FirstOrDefault();
             issues.Remove(element);
         }
-
     }
 }

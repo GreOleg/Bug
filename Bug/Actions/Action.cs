@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Exceptions;
 
 namespace Bug
 {
@@ -13,18 +14,23 @@ namespace Bug
             while (true)
             {
                 ShowoOptions(menuPoints);
-
                 Console.WriteLine("Please choose action number");
                 var point = Console.ReadLine();
-
-                var inputParsed = int.TryParse(point, out int userPoint);
-
-                if (!inputParsed || userPoint > menuPoints.Length)
+                try
                 {
-                    ShowoOptions(menuPoints);
-                    continue;
+                    var inputParsed = int.TryParse(point, out int userPoint);
+
+                    if (!inputParsed || userPoint > menuPoints.Length)
+                    {
+                        ShowoOptions(menuPoints);
+                        continue;
+                    }
+                    return userPoint;
                 }
-                return userPoint;
+                catch(InvalidInputException ex)
+                {
+                    ex.ShowMessage();
+                }
             }
         }
 
@@ -47,6 +53,5 @@ namespace Bug
                 Console.WriteLine($"{i + 1} - {menuPoints[i]}");
             }
         }
-
     }
 }

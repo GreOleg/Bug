@@ -72,7 +72,6 @@ namespace Bug.Application
                     Console.WriteLine("Incorrect input. Please follow the instructions above");
                     break;
             }
-
         }
 
         private static TestCase InitTestCase()
@@ -129,7 +128,6 @@ namespace Bug.Application
 
             } while (validInputRecievedPrecondition);
 
-
             var steps = new List<Step>();
             var step = InitStep();
             steps.Add(step);
@@ -177,15 +175,12 @@ namespace Bug.Application
 
             } while (validInputRecievedResult);
 
-
             var step = new Step()
             {
                 Action = action,
                 Result = result,
             };
-
             return step;
-
         }
 
         private static Bug InitBug()
@@ -304,7 +299,6 @@ namespace Bug.Application
                 ActualResult = actualResult,
                 ExpectedResult = expectedResult
             };
-
             return bug;
         }
     }

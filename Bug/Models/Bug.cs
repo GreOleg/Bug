@@ -37,7 +37,6 @@ namespace Bug
             {
                 throw new InvalidCastException("Ошибка преобразования");
             }
-
         }
 
         public override string ToString()

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intership_c3.Exceptions
+namespace Exceptions
 {
     class InvalidInputException : Exception
     {
